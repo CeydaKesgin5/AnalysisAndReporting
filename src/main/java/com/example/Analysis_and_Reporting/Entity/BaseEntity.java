@@ -1,4 +1,4 @@
-package _1.ogu.edu.tr.Analysis_and_Reporting.entity;
+package com.example.Analysis_and_Reporting.Entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

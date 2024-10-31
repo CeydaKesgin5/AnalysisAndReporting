@@ -1,4 +1,4 @@
-package _1.ogu.edu.tr.Analysis_and_Reporting.repository;
+package com.example.Analysis_and_Reporting.Repository;
 
 import com.example.Analysis_and_Reporting.Entity.Calisan;
 import org.springframework.data.jpa.repository.JpaRepository;

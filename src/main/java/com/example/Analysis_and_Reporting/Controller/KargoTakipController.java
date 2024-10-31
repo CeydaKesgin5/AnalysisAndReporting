@@ -1,6 +1,7 @@
-
+package com.example.Analysis_and_Reporting.Controller;
 
 import com.example.Analysis_and_Reporting.Entity.KargoTakip;
+
 import com.example.Analysis_and_Reporting.Service.KargoTakipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

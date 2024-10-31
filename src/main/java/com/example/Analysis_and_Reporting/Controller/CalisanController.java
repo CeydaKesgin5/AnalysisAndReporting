@@ -1,5 +1,6 @@
 package com.example.Analysis_and_Reporting.Controller;
 
+import com.example.Analysis_and_Reporting.Entity.Calisan;
 import com.example.Analysis_and_Reporting.Service.CalisanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

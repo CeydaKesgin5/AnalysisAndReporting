@@ -1,29 +1,17 @@
-package com.example.Analysis_and_Reporting.Entity;
+package com.example.Analysis_and_Reporting.DTO;
 
-import jakarta.persistence.*;
+import com.example.Analysis_and_Reporting.Entity.Kargo;
 import lombok.Data;
+
 import java.time.LocalDateTime;
 
 @Data
-@Entity
-@Table(name = "kargo_takip", schema = "kargo_sistemi")
-public class KargoTakip {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class KargoTakipDtp {
     private Long takipId;
-
-    @ManyToOne
-    @JoinColumn(name = "kargo_id", nullable = false)
     private Kargo kargo;
-
-    @Column(nullable = false)
     private String konum;
-
-    @Column(nullable = false)
     private LocalDateTime tarih;
-
     private String aciklama;
-
     private String createdBy;
     private LocalDateTime createdAt;
     private String updatedBy;

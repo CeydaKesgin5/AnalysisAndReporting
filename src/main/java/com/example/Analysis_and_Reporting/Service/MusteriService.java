@@ -37,6 +37,9 @@ public class MusteriService {
             throw new RuntimeException("Müşteri bulunamadı"); // Müşteri bulunamazsa hata fırlat
         }
     }
+    public void deleteAllMusteri() {
+        musteriRepository.deleteAll();
+    }
 
     public void deleteMusteri(Long id) {
         musteriRepository.deleteById(id);

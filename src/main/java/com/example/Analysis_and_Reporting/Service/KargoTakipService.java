@@ -1,4 +1,4 @@
-
+package com.example.Analysis_and_Reporting.Service;
 
 import com.example.Analysis_and_Reporting.Entity.KargoTakip;
 import com.example.Analysis_and_Reporting.Repository.KargoTakipRepository;
