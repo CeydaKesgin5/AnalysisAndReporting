@@ -1,0 +1,16 @@
+
+spring:
+  spring:
+    application:
+      name: Kargo
+    server:
+      port: ${SERVER_PORT:8011}
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Kargo
+    username: postgres
+    password: pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
