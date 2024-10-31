@@ -2,7 +2,7 @@ spring:
   application:
     name: Kargo
   server:
-    port: ${SERVER_PORT:8011}
+    port: 8011
   datasource:
     url: jdbc:postgresql://localhost:5432/ilerijava
     username: devuser

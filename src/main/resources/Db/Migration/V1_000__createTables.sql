@@ -29,7 +29,7 @@ ALTER TABLE kargo_sistemi.kargo
 
 CREATE TABLE kargo_sistemi.kargo_takip (
                              takip_id SERIAL PRIMARY KEY,
-                             kargo_id INT NOT NULL REFERENCES kargo(kargo_id) ON DELETE CASCADE,
+                             kargo_id INT NOT NULL REFERENCES kargo_sistemi.kargo(kargo_id) ON DELETE CASCADE,
                              konum TEXT NOT NULL,
                              durum VARCHAR(50) NOT NULL,
                              aciklama TEXT,
@@ -78,7 +78,7 @@ CREATE TABLE kargo_sistemi.arac (
                       plaka VARCHAR(10) NOT NULL UNIQUE,
                       tur VARCHAR(50) NOT NULL,
                       kapasite DECIMAL(5, 2) CHECK (kapasite >= 0),
-                      atanan_calisan_id INT REFERENCES calisan(calisan_id) ON DELETE SET NULL,
+                      atanan_calisan_id INT REFERENCES kargo_sistemi.calisan(calisan_id) ON DELETE SET NULL,
                       kayit_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

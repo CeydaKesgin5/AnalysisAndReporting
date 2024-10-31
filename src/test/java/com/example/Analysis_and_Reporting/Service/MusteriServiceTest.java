@@ -13,6 +13,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -87,9 +88,12 @@ public class MusteriServiceTest {
         Musteri musteri = new Musteri("Ali", "Yılmaz", "1234567890", "Adres");
         musteriService.saveMusteri(musteri);
 
+        // Act
         musteriService.deleteMusteri(musteri.getId());
 
-        assertThat(musteriService.getMusteriById(musteri.getId())).isNull();
+        // Assert
+        Optional<Musteri> result = musteriService.getMusteriById(musteri.getId());
+        assertThat(result).isEmpty();
     }
 
     @Test
