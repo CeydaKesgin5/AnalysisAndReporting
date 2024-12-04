@@ -22,4 +22,13 @@ public class KargoTakipService {
     public List<KargoTakip> getKargoTakipByKargoId(Long kargoId) {
         return kargoTakipRepository.findByKargo_KargoId(kargoId);
     }
+    public void deleteAllKargoTakip() {
+    }
+
+    public List<KargoTakip> getAllKargoTakip() {
+        return kargoTakipRepository.findAll();
+    }
+
+    public void deleteKargoTakip(Long takipId) {
+    }
 }
