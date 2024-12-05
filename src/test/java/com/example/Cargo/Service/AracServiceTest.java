@@ -71,7 +71,6 @@ class AracServiceTest {
         assertEquals(2, allAracs.size());
         verify(aracRepository, times(1)).findAll();
     }
-
     @Test
     void testDeleteArac() {
         // Arrange
@@ -84,4 +83,5 @@ class AracServiceTest {
         // Assert
         verify(aracRepository, times(1)).deleteById(aracId);
     }
+
 }
