@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Where;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "settings")
 @NoArgsConstructor
@@ -29,5 +31,14 @@ public class Setting extends BaseEntity {
 
     @Column(name = "setting_value", nullable = false, length = 255)
     private String settingValue;
+
+
+    private String createdBy;
+    private LocalDateTime createdAt;
+    private String updatedBy;
+    private LocalDateTime updatedAt;
+    private String deletedBy;
+    private LocalDateTime deletedAt;
+    private Integer version;
 }
 
