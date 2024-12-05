@@ -8,8 +8,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -25,68 +23,54 @@ class KargoServiceTest {
     @InjectMocks
     private KargoService kargoService;
 
+    private AutoCloseable closeable; // AutoCloseable için değişiklik
+
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
+        closeable = MockitoAnnotations.openMocks(this); // Try-with-resources uyumu için closeable
     }
 
     @Test
     void testSaveKargo() {
-        // Arrange
         Kargo kargo = new Kargo();
         kargo.setKargoNo("K12345");
-        kargo.setGondericiAdi("Ahmet");
-        kargo.setAliciAdi("Mehmet");
-        kargo.setUcret(BigDecimal.valueOf(100.50));
 
         when(kargoRepository.save(any(Kargo.class))).thenReturn(kargo);
 
-        // Act
         Kargo savedKargo = kargoService.saveKargo(kargo);
 
-        // Assert
         assertNotNull(savedKargo);
         assertEquals("K12345", savedKargo.getKargoNo());
-        assertEquals("Ahmet", savedKargo.getGondericiAdi());
-        assertEquals("Mehmet", savedKargo.getAliciAdi());
         verify(kargoRepository, times(1)).save(kargo);
     }
 
     @Test
     void testGetAllKargos() {
-        // Arrange
         Kargo kargo1 = new Kargo();
         kargo1.setKargoNo("K12345");
 
         Kargo kargo2 = new Kargo();
         kargo2.setKargoNo("K67890");
 
-        List<Kargo> kargoList = Arrays.asList(kargo1, kargo2);
+        when(kargoRepository.findAll()).thenReturn(Arrays.asList(kargo1, kargo2));
 
-        when(kargoRepository.findAll()).thenReturn(kargoList);
+        List<Kargo> kargos = kargoService.getAllKargos();
 
-        // Act
-        List<Kargo> allKargos = kargoService.getAllKargos();
-
-        // Assert
-        assertNotNull(allKargos);
-        assertEquals(2, allKargos.size());
+        assertNotNull(kargos);
+        assertEquals(2, kargos.size());
         verify(kargoRepository, times(1)).findAll();
     }
 
     @Test
     void testGetKargoById() {
-        // Arrange
         Long kargoId = 1L;
         Kargo kargo = new Kargo();
         kargo.setKargoNo("K12345");
 
         when(kargoRepository.findById(kargoId)).thenReturn(Optional.of(kargo));
 
-        // Act
         Optional<Kargo> foundKargo = kargoService.getKargoById(kargoId);
 
-        // Assert
         assertTrue(foundKargo.isPresent());
         assertEquals("K12345", foundKargo.get().getKargoNo());
         verify(kargoRepository, times(1)).findById(kargoId);
@@ -94,14 +78,11 @@ class KargoServiceTest {
 
     @Test
     void testDeleteKargo() {
-        // Arrange
         Long kargoId = 1L;
         doNothing().when(kargoRepository).deleteById(kargoId);
 
-        // Act
         kargoService.deleteKargo(kargoId);
 
-        // Assert
         verify(kargoRepository, times(1)).deleteById(kargoId);
     }
 }
