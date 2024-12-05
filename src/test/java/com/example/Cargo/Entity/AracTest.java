@@ -14,6 +14,10 @@ public class AracTest {
         arac.setModel("Ford Focus");
         arac.setYukKapasitesi(1500.0);
 
-
+        // Assertions
+        assertEquals("34ABC123", arac.getPlaka());
+        assertEquals("Ford Focus", arac.getModel());
+        assertEquals(1500.0, arac.getYukKapasitesi());
+        assertNotNull(arac);
     }
 }
