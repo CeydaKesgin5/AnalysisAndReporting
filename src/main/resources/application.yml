@@ -1,8 +1,7 @@
 spring:
   application:
     name: Kargo
-  server:
-    port: 8011
+
   datasource:
     url: jdbc:postgresql://localhost:5432/ilerijava
     username: devuser
@@ -15,3 +14,5 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+server:
+  port: 8011
