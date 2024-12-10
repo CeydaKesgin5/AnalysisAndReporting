@@ -16,7 +16,6 @@ import java.util.Optional;
 public interface SettingRepository extends JpaRepository<Setting, Long> {
     @Query("select a.settingKey from Setting a WHERE a.settingKey= :settingKey")
 
-    // Setting key'e göre bir ayar getir
     Optional<Setting> findBySettingKey(String settingKey);
 
     default Setting createSetting(Setting setting) {
@@ -33,7 +32,6 @@ public interface SettingRepository extends JpaRepository<Setting, Long> {
         return save(existingSetting);
     }
 
-    // 3. Soft Delete (Silme işlemi, kaydı veritabanından kaldırmadan işaretler)
     default void deleteSetting(Long id, String deletedBy) {
         Setting existingSetting = findById(id).orElseThrow(() -> new RuntimeException("Setting bulunamadı."));
         existingSetting.setDeletedAt(java.time.LocalDateTime.now());
@@ -41,7 +39,6 @@ public interface SettingRepository extends JpaRepository<Setting, Long> {
         save(existingSetting);
     }
 
-    // 4. Hard Delete (Kayıt veritabanından tamamen silinir)
     @Modifying
     @Transactional
     @Query("DELETE FROM Setting s WHERE s.id = :id")

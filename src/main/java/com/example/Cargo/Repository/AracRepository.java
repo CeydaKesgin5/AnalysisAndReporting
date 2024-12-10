@@ -26,7 +26,7 @@ public interface AracRepository extends JpaRepository<Arac, Long> {
 
     List<Arac> findByModelContaining(String model);
 
-    @Query("select a.Id from Arac a WHERE a.Id= :id")
+    @Query("select a from Arac a WHERE a.Id= :id")
     List<Arac> getAracById(Long id);
 
     default Arac saveArac(Arac arac) {
