@@ -48,4 +48,8 @@ public interface MusteriRepository extends JpaRepository<Musteri, Long> {
     @Transactional
     @Query("DELETE FROM Musteri m WHERE m.Id = :id")
     void deleteMusteriPermanently(@Param("id") Long id);
+
+    Musteri findByEmail(String mail);
+
+    Musteri findByTelefon(String number);
 }

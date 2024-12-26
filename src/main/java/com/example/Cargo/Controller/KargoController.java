@@ -18,8 +18,9 @@ public class KargoController {
         this.kargoService = kargoService;
     }
 
-    @PostMapping
+    @PostMapping("create")
     public Kargo createKargo(@RequestBody Kargo kargo) {
+
         return kargoService.saveKargo(kargo);
     }
 
