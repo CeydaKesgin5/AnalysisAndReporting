@@ -2,14 +2,15 @@
 
 This project is a **Cargo Management System** developed using a microservices architecture. The application manages cargo operations and tracking by integrating with various microservices.
 
-# Features
+## Features
 
 - **Cargo Management**: Users can initiate cargo shipments, track their status, and receive updates on the cargo's journey.
 - **Microservice Integration**: The system communicates with external services through REST APIs.
 - **Swagger API Documentation**: APIs are documented and can be tested using Swagger.
 - **DTO (Data Transfer Object)**: DTO has been used in scenarios where minimizing method calls or serializing data more efficiently is required.
-
-## Technologies Used
+- **Database**: PostgreSQL is used to store cargo and tracking data.
+- 
+### Technologies Used
 
 - **Spring Boot**: The core framework for building the application.
 - **JPA and PostgreSQL**: Used for database interactions and storage.
@@ -17,20 +18,13 @@ This project is a **Cargo Management System** developed using a microservices ar
 - **Docker**: Used for containerization of the application, PostgreSQL, and Redis services.
 - **Swagger**: Provides API documentation and testing functionality.
 
-## Project Structure
-
-The project is divided into several key components:
-
-1. **Microservices**: The application includes microservices like the Notification service for integration.
-2. **Database**: PostgreSQL is used to store cargo and tracking data.
-
 ### Dependencies
 
 - **PostgreSQL**: Required for database connectivity.
 - **Redis**: Used for cache and session management.
 
 
-## Testler
+### Testler
 
 In this project **JUnit 5**, **Mockito** ve **Spring Boot Test** are used for software testing.
 
