@@ -1,8 +1,8 @@
-# Cargo Management System
+## Cargo Management System
 
 This project is a **Cargo Management System** developed using a microservices architecture. The application manages cargo operations and tracking by integrating with various microservices.
 
-## Features
+### Features
 
 - **Cargo Management**: Users can initiate cargo shipments, track their status, and receive updates on the cargo's journey.
 - **Microservice Integration**: The system communicates with external services through REST APIs.
