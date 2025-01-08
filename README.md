@@ -24,7 +24,7 @@ This project is a **Cargo Management System** developed using a microservices ar
 - **Redis**: Used for cache and session management.
 
 
-### Testler
+### Tests
 
 In this project **JUnit 5**, **Mockito** ve **Spring Boot Test** are used for software testing.
 
