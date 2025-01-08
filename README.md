@@ -9,7 +9,7 @@ This project is a **Cargo Management System** developed using a microservices ar
 - **Swagger API Documentation**: APIs are documented and can be tested using Swagger.
 - **DTO (Data Transfer Object)**: DTO has been used in scenarios where minimizing method calls or serializing data more efficiently is required.
 - **Database**: PostgreSQL is used to store cargo and tracking data.
-- 
+  
 ### Technologies Used
 
 - **Spring Boot**: The core framework for building the application.
