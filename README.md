@@ -1,5 +1,3 @@
-﻿# Cargo
-
 # Cargo Management System
 
 This project is a **Cargo Management System** developed using a microservices architecture. The application manages cargo operations and tracking by integrating with various microservices.
